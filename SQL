@@ -1,0 +1,13 @@
+
+Extract between a and b
+  REGEXP_EXTRACT(<string>,r'<a> (.*?) <b>)
+
+Round to nearest quater
+  EXTRACT(TIME FROM TIMESTAMP_SECONDS(UNIX_SECONDS(<input>) - MOD(UNIX_SECONDS(<input>), 15 * 60))) AS RoundedTime
+
+UTC timestamp to DK timestamp
+  Parse_timestamp("%c",FORMAT_TIMESTAMP("%c", <tid> , 'Europe/Copenhagen')) AS CopenhagenTime
+
+
+Extract number from string between specified parts
+  REGEXP_EXTRACT(<string>,r'<stringpart>([0-9]+)<stringpart>)
